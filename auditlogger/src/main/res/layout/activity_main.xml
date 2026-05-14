@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Secret Notes from Provider:"
+        android:textColor="#212121"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvSecretNotes"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#F0F0F0"
+        android:padding="8dp"
+        android:textColor="#000000"
+        android:text="Notes will appear here" />
+
+    <Button
+        android:id="@+id/btnLoadNotes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Load Secret Notes" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginVertical="16dp"
+        android:background="@android:color/darker_gray" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Audit Logs (Broadcasts):"
+        android:textColor="#212121"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvAuditLogs"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#E8F5E9"
+        android:padding="8dp"
+        android:textColor="#1B5E20"
+        android:text="Logs will appear here" />
+
+    <Button
+        android:id="@+id/btnReloadLogs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Reload Audit Logs" />
+
+</LinearLayout>

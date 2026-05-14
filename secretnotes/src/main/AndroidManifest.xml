@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 1. Định nghĩa Permission bảo vệ dữ liệu của Secret Notes -->
+    <permission
+        android:name="com.example.secretnotes.permission.READ_SECRET_NOTES"
+        android:protectionLevel="signature" />
+
+    <!-- 2. Khai báo quyền để gửi Audit Log sang App 2 -->
+    <uses-permission android:name="com.example.auditlogger.permission.WRITE_AUDIT_LOG" />
+
+    <!-- 3. Khai báo package của App 2 để có thể gửi broadcast (Từ Android 11+) -->
+    <queries>
+        <package android:name="com.example.auditlogger" />
+    </queries>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Secret Notes"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Demo">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="Secret Notes"
+            android:theme="@style/Theme.Demo">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 4. Khai báo Content Provider với readPermission -->
+        <provider
+            android:name=".SecretNoteProvider"
+            android:authorities="com.example.secretnotes.provider"
+            android:exported="true"
+            android:readPermission="com.example.secretnotes.permission.READ_SECRET_NOTES" />
+
+    </application>
+
+</manifest>
